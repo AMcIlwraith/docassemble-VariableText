@@ -1,0 +1,36 @@
+code: |
+  how_it_be
+  all_done
+---
+question: |
+  Is this the present, or the past?
+field: time
+buttons:
+  - Present
+  - Past
+---
+mandatory: True
+question: |
+  Well, that's good to know.
+subquestion: |
+  How
+  % if time == 'Present':
+  is
+  % elif time == 'Past':
+  was
+  % endif
+  it
+  % if time == 'Present':
+  going now?
+  % elif time == 'Past':
+  back then?
+  % endif
+field: how_it_be
+buttons:
+  - "Good": True
+  - "Bad": False
+---
+mandatory: True
+question: |
+  OK then.
+exit: exit
